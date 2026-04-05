@@ -1,11 +1,30 @@
 
-  # Professional Portfolio Website
+# Professional Portfolio Website
 
-  This is a code bundle for Professional Portfolio Website. The original project is available at https://www.figma.com/design/LS7oA41n2WAh0j6nNlphiN/Professional-Portfolio-Website.
+A light and simple portfolio website built with vanilla HTML, CSS, and JavaScript. Fully responsive and deployed on GitHub Pages.
 
-  ## Running the code
+## Getting Started
 
-  Run `npm i` to install the dependencies.
+Simply open `portfolio.html` in your browser to view the website locally.
 
-  Run `npm run dev` to start the development server.
+## Features
+
+- Single-page scrollable design
+- Project showcase with filtering
+- Smooth scroll animations
+- Responsive design (mobile, tablet, desktop)
+- Easy customization with image logo support
+
+## Customization
+
+Update the following in `portfolio.html` and `portfolio.js`:
+- Your name and bio in the hero section
+- Project data in the `projectsData` array in `portfolio.js`
+- Skills section in the about area
+- Contact information
+- Replace `logo.png` with your own logo
+
+## Deployment
+
+This site is deployed on GitHub Pages at: https://loslejo.github.io
   
