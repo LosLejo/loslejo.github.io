@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1e40af;
+    --primary: #9B8EC7;
+    --primary-dark: #B4D3D9;
     --primary-light: #3b82f6;
-    --text-dark: #1f2937;
+    --text-dark: #9B8EC7;
     --text-light: #6b7280;
-    --bg-light: #f3f4f6;
-    --bg-white: #ffffff;
+    --bg-light: #F2EAE0;
+    --bg-white: #F2EAE0;
     --border: #e5e7eb;
     --transition: all 0.3s ease;
 }
@@ -127,14 +127,14 @@ body {
 .nav-brand {
     text-decoration: none;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
 .nav-logo {
-    height: 40px;
+    height: 60px;
     width: auto;
-    max-width: 120px;
+    max-width: 180px;
     border-radius: 8px;
     transition: var(--transition);
 }
@@ -444,6 +444,27 @@ body {
     border-color: var(--primary);
 }
 
+.view-more-btn {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.view-more-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
 /* ======================== About Section ======================== */
 
 .about {
@@ -506,21 +527,36 @@ body {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .contact-info h3 {
     font-size: 22px;
     margin-bottom: 30px;
     color: var(--text-dark);
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact-item {
     display: flex;
     gap: 16px;
     margin-bottom: 24px;
+    align-items: center;
+}
+
+.contact-item>div {
+    text-align: center;
 }
 
 .contact-icon {
@@ -548,11 +584,12 @@ body {
     display: flex;
     gap: 12px;
     margin-top: 30px;
+    justify-content: center;
 }
 
 .social-link {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-color: var(--bg-light);
     color: var(--text-dark);
     border-radius: 8px;
@@ -562,6 +599,11 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
 }
 
 .social-link:hover {
@@ -618,6 +660,191 @@ body {
     text-align: center;
     padding: 32px 0;
     margin-top: 80px;
+}
+
+/* ======================== Project Modal ======================== */
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-dark);
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.modal-close:hover {
+    color: var(--primary-light);
+}
+
+#modalTitle {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.modal-gallery-item {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.modal-gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.modal-gallery-item.placeholder {
+    background: linear-gradient(135deg, #dbeafe, #93c5fd);
+    color: #1e40af;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modalDescription {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-tags .project-tag {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.modal-year {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.modal-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.modal-links .project-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px 16px;
+    background-color: var(--primary-light);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.modal-links .project-link:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* ======================== Responsive Design ======================== */
