@@ -810,19 +810,21 @@ body {
 
 .modal-links .project-link {
     flex: 1;
-    text-align: center;
     padding: 10px 16px;
-    background-color: var(--primary-light);
-    color: white;
-    border-radius: 8px;
+    text-align: center;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    border: 1px solid var(--border);
     transition: var(--transition);
 }
 
 .modal-links .project-link:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }
 
 @keyframes fadeIn {

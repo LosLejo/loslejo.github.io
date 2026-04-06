@@ -76,7 +76,7 @@ const projectsData = [
         year: "2026",
         github: "#",
         demo: "#",
-        documentation_pdf: "#",
+        documentation_pdf: "https://drive.google.com/file/d/1wwC6roVvJYuA4RhWmTaaJ5fMy6DR08lE/view?usp=sharing",
         images: [
             { src: "Assets/Media/Sentry/Sentry-1.jpg", alt: "Sentry Station Overall" },
             { src: "Assets/Media/Sentry/Sentry-2.png", alt: "Camera & Lighting System" },
