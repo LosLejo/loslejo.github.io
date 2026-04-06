@@ -1,5 +1,5 @@
 
-# Professional Portfolio Website
+# My Portfolio 
 
 A light and simple portfolio website built with vanilla HTML, CSS, and JavaScript. Fully responsive and deployed on GitHub Pages.
 
