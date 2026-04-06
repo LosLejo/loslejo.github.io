@@ -109,7 +109,7 @@ function renderProjects(filter = "all") {
             </div>
             <div class="project-footer">
                 ${project.github !== "#" ? `<a href="${project.github}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>` : ""}
-                ${project.documentation_pdf !== "#" ? `<a href="${project.documentation_pdf}" class="project-link" target="_blank" rel="noopener noreferrer">📄 Manual</a>` : ""}
+                ${project.category === "software" && project.documentation_pdf !== "#" ? `<a href="${project.documentation_pdf}" class="project-link" target="_blank" rel="noopener noreferrer">📄 Manual</a>` : ""}
                 ${project.demo !== "#" ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener noreferrer">${project.category === "hardware" ? "Documentation" : "Demo"}</a>` : ""}
                 ${project.category === "hardware" ? `<button class="view-more-btn" data-index="${index}">View More</button>` : ""}
             </div>
