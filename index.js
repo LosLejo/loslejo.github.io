@@ -76,7 +76,7 @@ const projectsData = [
         year: "2026",
         github: "#",
         demo: "#",
-        documentation_pdf: "https://drive.google.com/file/d/1wwC6roVvJYuA4RhWmTaaJ5fMy6DR08lE/view?usp=sharing",
+        documentation_pdf: "#",
         images: [
             { src: "Assets/Media/Sentry/Sentry-1.jpg", alt: "Sentry Station Overall" },
             { src: "Assets/Media/Sentry/Sentry-2.png", alt: "Camera & Lighting System" },
@@ -109,7 +109,7 @@ function renderProjects(filter = "all") {
             </div>
             <div class="project-footer">
                 ${project.github !== "#" ? `<a href="${project.github}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>` : ""}
-                ${project.category === "software" && project.documentation_pdf !== "#" ? `<a href="${project.documentation_pdf}" class="project-link" target="_blank" rel="noopener noreferrer">📄 Manual</a>` : ""}
+                ${project.documentation_pdf !== "#" ? `<a href="${project.documentation_pdf}" class="project-link" target="_blank" rel="noopener noreferrer">📄 Manual</a>` : ""}
                 ${project.demo !== "#" ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener noreferrer">${project.category === "hardware" ? "Documentation" : "Demo"}</a>` : ""}
                 ${project.category === "hardware" ? `<button class="view-more-btn" data-index="${index}">View More</button>` : ""}
             </div>
